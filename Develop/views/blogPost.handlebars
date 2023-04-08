@@ -3,3 +3,12 @@
   <p>{{body}}</p>
   <p>Created by {{user.name}} on {{format_date date_created}}</p>
 </div>
+
+ {{#each comments as |comment|}}
+ <div class="row mb-2">
+<p>{{comment.body}}
+  {{comment.date_created}}
+  {{comment.user_id}}
+</p>
+ </div>
+ {{/each}}
