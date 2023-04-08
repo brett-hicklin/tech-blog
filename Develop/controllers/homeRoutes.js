@@ -81,4 +81,27 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+router.get('/edit/:id', async (req, res) => {
+  try {
+    const blogPostData = await BlogPost.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        },
+      ],
+    });
+
+    const blogPost = blogPostData.get({ plain: true });
+
+    res.render('edit', {
+      ...blogPost,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
 module.exports = router;

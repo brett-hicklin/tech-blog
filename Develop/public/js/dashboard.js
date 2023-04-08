@@ -2,12 +2,12 @@ const newFormHandler = async (event) => {
   event.preventDefault();
 
   const title = document.querySelector('#post-title').value.trim();
-  const content = document.querySelector('#post-body').value.trim();
+  const body = document.querySelector('#post-body').value.trim();
 
-  if (title && content) {
+  if (title && body) {
     const response = await fetch(`/api/blogposts`, {
       method: 'POST',
-      body: JSON.stringify({ title, content }),
+      body: JSON.stringify({ title, body }),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -37,10 +37,22 @@ const delButtonHandler = async (event) => {
   }
 };
 
+
+function editButtonHandler(event) {
+  if (event.target.hasAttribute('data-id')) {
+    const id = event.target.getAttribute('data-id');
+    document.location.replace(`/edit/${id}`)
+  }
+}
+
 document
   .querySelector('.new-project-form')
   .addEventListener('submit', newFormHandler);
 
 document
-  .querySelector('.project-list')
+  .querySelector('#delete')
   .addEventListener('click', delButtonHandler);
+
+document
+  .querySelector('#edit')
+  .addEventListener('click',editButtonHandler);
