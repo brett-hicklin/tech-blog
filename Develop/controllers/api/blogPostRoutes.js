@@ -35,4 +35,27 @@ router.delete('/:id', withAuth, async (req, res) => {
   }
 });
 
+router.put("/:id", async (req, res) => {
+  // update a blog post by id
+  try {
+    const updatedBlogPost = await BlogPost.update(
+      {
+        // All the fields you can update and the data attached to the request body.
+        title: req.body.title,
+        body: req.body.body
+      },
+      {
+        where: {
+          id: req.params.id,
+        },
+      }
+    );
+
+    res.status(200).json(updatedBlogPost);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
 module.exports = router;
