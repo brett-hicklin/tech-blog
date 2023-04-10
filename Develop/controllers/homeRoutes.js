@@ -39,12 +39,13 @@ router.get('/blogpost/:id', async (req, res) => {
         },
         {
           model:Comments,
-          attributes:['body','date_created','user_id']
+          attributes:['body','date_created','user_id', 'blog_post_id']
         }
       ],
     });
 
     const blogPost = blogPostData.get({ plain: true });
+    console.log('blogPost comments', blogPost.comments)
 
     res.render('blogPost', {
       ...blogPost,

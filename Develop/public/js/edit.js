@@ -1,16 +1,10 @@
 const updateBlogPostButtonHandler = async (event) => {
-    console.log('triggered by submit')
+  
     event.preventDefault();
 
     const title = document.querySelector('#post-title').value.trim();
     const body = document.querySelector('#post-body').value.trim();
     
-
-    console.log(title)
-    console.log(body)
-    console.log(event.target.hasAttribute('data-id'))
-
-
     if (title && body){
   
     if (event.target.hasAttribute('data-id')) {

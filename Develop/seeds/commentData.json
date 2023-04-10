@@ -1,19 +1,18 @@
 [
     {
         
-        "body": "test comment 1"
-        
-       
+        "body": "test comment 1",
+        "blog_post_id": 1
       },
       {
     
-        "body": "test comment 2"
-        
+        "body": "test comment 2",
+        "blog_post_id": 2
       },
       {
      
-        "body": "test comment 3"
-        
+        "body": "test comment 3",
+        "blog_post_id": 3
       }
 
 
