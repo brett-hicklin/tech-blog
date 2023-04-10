@@ -39,7 +39,13 @@ router.get('/blogpost/:id', async (req, res) => {
         },
         {
           model:Comments,
-          attributes:['body','date_created','user_id', 'blog_post_id']
+          attributes:['body','date_created','user_id', 'blog_post_id'],
+          include:[
+            {model:User,
+            attributes:['name'],
+            
+            }
+          ]
         }
       ],
     });
