@@ -1,5 +1,9 @@
 header, .project:not(:last-child) {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 2px solid #483939;
+}
+
+body{
+  background-color: aliceblue;
 }
 
 .no-button {
@@ -17,8 +21,12 @@ header, .project:not(:last-child) {
   text-decoration: underline;
 }
 
-.dollar-amount {
-  color: #056605;
-  font-weight: bold;
-  margin-left: -5px;
+.comment{
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.comment-info{
+  color:rgb(105, 115, 105);
 }

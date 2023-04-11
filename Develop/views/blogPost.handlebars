@@ -6,9 +6,9 @@
 
  {{#each comments as |comment|}}
  <div class="row mb-2">
-<p>{{comment.body}}
-  <em>
-  created by {{comment.user.name}}
+<p class="comment">{{comment.body}}
+  <em class="comment-info">
+   from {{comment.user.name}}
   on {{format_date comment.date_created}}
  </em>
 </p>
